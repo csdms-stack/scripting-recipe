@@ -1,0 +1,36 @@
+{% set name = "scripting" %}
+{% set version = "0.1.0" %}
+
+package:
+  name: {{ name }}
+  version: {{ version }}
+
+source:
+  git_url: https://github.com/csdms/py-scripting
+
+requirements:
+  build:
+    - setuptools
+    - python
+    - nose
+    - pbr
+  run:
+    - python
+    - nose
+
+test:
+  imports:
+    - scripting
+  commands:
+    - nosetests --with-doctest scripting
+
+build:
+  number: 0
+  script: python setup.py install --single-version-externally-managed --record record.txt
+
+about:
+  home: https://github.com/csdms/py-scripting
+  license: MIT
+  license_file: LICENSE
+  summary: Python utilities for shell scripting
+  dev_url: https://github.com/csdms/py-scripting

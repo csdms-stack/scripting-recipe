@@ -26,7 +26,7 @@ test:
     - nosetests --with-doctest scripting
 
 build:
-  number: 0
+  number: 1
   script: python setup.py install --single-version-externally-managed --record record.txt
 
 about:

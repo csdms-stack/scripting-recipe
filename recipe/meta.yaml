@@ -1,12 +1,12 @@
 {% set name = "scripting" %}
-{% set version = "0.1.1" %}
+{% set version = "0.2.0" %}
 
 package:
   name: {{ name }}
   version: {{ version }}
 
 source:
-  git_url: https://github.com/csdms/py-scripting
+  url: https://github.com/csdms/py-scripting/archive/v0.2.0.tar.gz
 
 requirements:
   build:

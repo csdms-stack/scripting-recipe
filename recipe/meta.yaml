@@ -6,7 +6,8 @@ package:
   version: {{ version }}
 
 source:
-  url: https://github.com/csdms/py-scripting/archive/v0.2.0.tar.gz
+  fn: py-scripting-{{ version }}.tar.gz
+  url: https://github.com/csdms/py-scripting/archive/v{{ version }}.tar.gz
 
 requirements:
   build:

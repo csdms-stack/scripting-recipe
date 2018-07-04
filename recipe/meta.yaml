@@ -8,6 +8,7 @@ package:
 source:
   url: https://github.com/csdms/py-scripting/archive/v{{ version }}.tar.gz
   fn: py-scripting-{{ version }}.tar.gz
+  sha256: 889b7d5971b8f9b74188f92dc8166790a6c25a5319181094619a6cb0e3877cbf
 
 requirements:
   build:

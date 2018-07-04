@@ -11,7 +11,7 @@ env:
   global:
   - CONDA_PREFIX=$HOME/miniconda
   - MINICONDA_URL_BASE="https://repo.continuum.io/miniconda/Miniconda3-latest"
-  - secure: avfivxnzy4bAnJFZ7UiG8YUtDtCdhiQBIXzfHE9WMHxyxkiuNewZ32f67ZaQN2Ol9T0IoasZ4b1JvlH+DsDQBctw7AUI9sDgO57v1sRqf02At4tFk1wVHnsZlL/jkPJW8Rfys/e0e1lBEvhHIET62QXC+dBhC7tFpNJGTbDSiGWzbB75TEe2Wyts19+NVsXHgqzRxDL2EcQdvKEGKCXuiESiZtpCsLpWKNiddsikMvPsdWX6l55g673Z+tZf+EFmntvB7YzTysVYlBJgBUOXyr7mUPG5N1vHA3w0HS4Or2SBBnX9ARWCLYjj2mOlAtfnlCcmZABrZ1XIasaydXKjeZ6sMO/zg2Z7rNs46mPEyeHqRVEBbQJFbEM/jAoSwhQjXYz2Z92JMc+IuGHwC8+aMtgwtKCMDCSm0DbU0wWAbphg6CebCBtHbpNU3Iqc7FzTNkklf0uzAXXJLm8H+J15p4ciOGGObMHqz52xdsPirKjHj+LLt64qyQjyiESTXfc+vxKVFS/E9Rl/Xndyn54mYYRRWiP9jehKOE1HHh0IrKZC5cXLby9ISdt3oQOz9GrBjqpWYUkoMXsCEdxHEFU5q7X9VqVBtqi2odhHYJ+iBIqIBeotpuIq811lf04PeRE0SoE/in9l2bwUQm9ckzMyaIIfdGUX4tkEgey/H/wYq7Q=
+  - secure: F6mjFrly+eQXmW/k2UzfloHFg1dmTMMTHaqT/Ch9rGx7xxIRqCe9h1kqQne/m9dzbh4Ab/kjytLyTmegKh2MrC2fb4fUj1WeZ8v0u+h+2ld2GJ26+ETdKF1LO7MmKXKRe3vpRPQLQsM5EYBpqtWPHFoegS56T5SyZPyoCqEkbYA6J76tAoCTeD9of1rtqSlX+2hQXaqqeWYwpSqyrleNLuT+1/EUmJWA2ZKKbKm+2kDjJKKZKCbt2UFTSsPO/1SBkszI3VMy4Ncp9v6XTR5QloFM6zIFtNWjDL33AwaMXJh4K837SonnkTC3dYkhnmKdvf7/gBNP+rb/OhJ7bK7s46Q6dEg82RXkFqeEVRxCXnUUmw8pMy7QbpbjcyEJrQD436U/H+qFu2t6jCVZ9CrBmrz88DlzYrhTLWW6pEaaXiRZRK19FXxeDMPSp3m8zfLf3Oe36URnRu7ZsycOt8XK9q8mMOWt6DFHfJlnbmTXQVeFb9mbkWA89Aqn6L/hsbpu4RSNm0HZSwysleGXpZxH4l81Y3VejyNrMFk1zY/Y7QnCTPZZtJL9KUMegMznADX8Conke4WtFirTVXtxvo4fbq8pMr26wprjI29qze+MbCY3EFdHIij+EDKf5WaHBSPvbMdLFuYkK0iR6dN2Yk7BhinLZsOorA4Fgqx4/+pN2zI=
 sudo: false
 filter_secrets: false
 before_install:
@@ -40,4 +40,5 @@ script:
 after_success:
 - curl https://raw.githubusercontent.com/csdms/ci-tools/master/anaconda_upload.py
   > $HOME/anaconda_upload.py
-- echo $ANACONDA_TOKEN | python $HOME/anaconda_upload.py ./recipe --channel=main --org=csdms-stack --token=-
+- echo $ANACONDA_TOKEN | python $HOME/anaconda_upload.py ./recipe --channel=main --org=csdms-stack
+  --token=-

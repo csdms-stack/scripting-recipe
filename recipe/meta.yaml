@@ -1,5 +1,5 @@
 {% set name = "scripting" %}
-{% set version = "0.2.0" %}
+{% set version = "0.2.1" %}
 
 package:
   name: {{ name }}
@@ -8,25 +8,24 @@ package:
 source:
   url: https://github.com/csdms/py-scripting/archive/v{{ version }}.tar.gz
   fn: py-scripting-{{ version }}.tar.gz
-  sha256: 889b7d5971b8f9b74188f92dc8166790a6c25a5319181094619a6cb0e3877cbf
+  sha256: 7ff93a9af586c93a41808f5132f75dc58c9a383abe702c5e5a87cc95f9585670
 
 requirements:
   build:
     - setuptools
     - python
     - pip
-    - nose
-    - pbr
+    - pytest
   run:
     - python
-    - nose
+    - pytest
     - six
 
 test:
-  imports:
-    - scripting
+  requires:
+    - pytest
   commands:
-    - nosetests --with-doctest scripting
+    - pytest --pyargs scripting --doctest-modules -o doctest_optionflags="NORMALIZE_WHITESPACE IGNORE_EXCEPTION_DETAIL ALLOW_UNICODE"
 
 build:
   number: 0

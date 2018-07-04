@@ -6,13 +6,14 @@ package:
   version: {{ version }}
 
 source:
-  git_url: https://github.com/csdms/py-scripting
-  git_tag: v0.2.0
+  url: https://github.com/csdms/py-scripting/archive/v{{ version }}.tar.gz
+  fn: py-scripting-{{ version }}.tar.gz
 
 requirements:
   build:
     - setuptools
     - python
+    - pip
     - nose
     - pbr
   run:
@@ -28,7 +29,7 @@ test:
 
 build:
   number: 0
-  script: python setup.py install --single-version-externally-managed --record record.txt
+  script: python -m pip install --no-deps --ignore-installed .
 
 about:
   home: https://github.com/csdms/py-scripting
